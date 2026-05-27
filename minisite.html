@@ -1,0 +1,1798 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     Shaarei Shamayim Gardens — Chabad.org Custom Minisite Template
+     Navigation header removed per instructions.
+     All CSS is inline within each section's <style> block.
+     Global CSS (variables, fonts, layout, buttons) lives in the
+     first (Hero) section and is inherited by all subsequent sections.
+═══════════════════════════════════════════════════════════════ -->
+
+
+<!-- ═══ HERO SECTION ═══ -->
+<co:section id="ContentBox" name="hero_section" title="Hero Section" actions="copy,delete,edit">
+
+  <section class="ssg-hero" id="ssg-top">
+    <div class="ssg-hero-bg"></div>
+    <div class="ssg-container">
+      <div class="ssg-hero-inner">
+
+        <div class="ssg-hero-content">
+
+          <div class="ssg-hero-eyebrow">
+            <co:editable id="Title" name="HeroEyebrow" title="Hero Eyebrow" actions="edit,delete">
+              A Sacred Resting Place · Jacksonville, Florida
+            </co:editable>
+          </div>
+
+          <div class="ssg-hero-title-hebrew">
+            <co:editable id="Title" name="HeroHebrew" title="Hero Hebrew Title" actions="edit,delete">
+              שַׁעֲרֵי שָׁמַיִם
+            </co:editable>
+          </div>
+
+          <h1 class="ssg-hero-title">
+            <co:editable id="Title" name="HeroTitle" title="Hero Main Title" actions="edit,delete">
+              Gates of <em>Heaven</em><br>Gardens
+            </co:editable>
+          </h1>
+
+          <div class="ssg-hero-translation">
+            <co:editable id="Subtitle" name="HeroTranslation" title="Hero Translation" actions="edit,delete">
+              — Peace of mind today. Dignity for generations. —
+            </co:editable>
+          </div>
+
+          <div class="ssg-hero-lede">
+            <co:editable id="Subtitle" name="HeroLede" title="Hero Lede Text" actions="edit,delete">
+              A serene and beautiful final resting place for the Jacksonville Jewish community —
+              held to the highest rabbinical standards, open to every Jewish family
+              regardless of affiliation.
+            </co:editable>
+          </div>
+
+          <div class="ssg-hero-ctas">
+            <co:editable id="link" tag_only="true" attribute="href,innertext" name="HeroCTA1" title="Hero CTA Button" actions="edit,delete">
+              <a class="ssg-btn" href="#ssg-contact">Schedule a Private Visit →</a>
+            </co:editable>
+            <co:editable id="link" tag_only="true" attribute="href,innertext" name="HeroCTA2" title="Hero Ghost Button" actions="edit,delete">
+              <a class="ssg-btn ssg-btn-ghost" href="#ssg-mission">Learn More</a>
+            </co:editable>
+          </div>
+
+        </div>
+
+        <div class="ssg-hero-image">
+          <co:editable id="picture" tag_only="true" attribute="src" name="HeroImage" title="Hero Image" actions="delete">
+            <img class="ssg-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1260&h=1575&auto=format&fit=crop&q=80" border="0" alt="Long view across the gardens">
+          </co:editable>
+          <div class="ssg-hero-image-tag">
+            <div class="ssg-hero-image-tag-label">
+              <co:editable id="Title" name="HeroTagLabel" title="Hero Image Tag Label" actions="edit,delete">
+                Established Tradition
+              </co:editable>
+            </div>
+            <div class="ssg-hero-image-tag-text">
+              <co:editable id="Subtitle" name="HeroTagText" title="Hero Image Tag Text" actions="edit,delete">
+                "Upheld in accordance with the Chief Rabbinate of Israel."
+              </co:editable>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ── GLOBAL: Fonts ── */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Assistant:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500&display=swap');
+
+    /* ── GLOBAL: Variables ── */
+    :root {
+      --ssg-cream: #F1ECE0;
+      --ssg-cream-soft: #E8E1D1;
+      --ssg-paper: #FAF7F0;
+      --ssg-ink: #1F2A23;
+      --ssg-ink-soft: #3F4A40;
+      --ssg-ink-mute: #6F7770;
+      --ssg-gold: #9A7F3D;
+      --ssg-gold-soft: #C4A961;
+      --ssg-moss: #4A5A45;
+      --ssg-line: rgba(31, 42, 35, 0.14);
+      --ssg-line-soft: rgba(31, 42, 35, 0.08);
+    }
+
+    /* ── GLOBAL: Base ── */
+    .ssg-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .ssg-container-narrow {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── GLOBAL: Buttons ── */
+    .ssg-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--ssg-ink);
+      color: var(--ssg-cream);
+      border: 1px solid var(--ssg-ink);
+      font-family: 'Assistant', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none !important;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .ssg-btn:hover { background: var(--ssg-moss); border-color: var(--ssg-moss); }
+    .ssg-btn-ghost {
+      background: transparent;
+      color: var(--ssg-ink);
+      border-color: var(--ssg-ink);
+    }
+    .ssg-btn-ghost:hover { background: var(--ssg-ink); color: var(--ssg-cream); }
+
+    /* ── GLOBAL: Section shared elements ── */
+    .ssg-section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ssg-gold);
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-section-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--ssg-gold);
+      flex-shrink: 0;
+    }
+    .ssg-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4.6vw, 60px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ssg-ink);
+      margin-bottom: 28px;
+      max-width: 720px;
+    }
+    .ssg-section-title em { font-style: italic; color: var(--ssg-moss); }
+    .ssg-section-lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--ssg-ink-soft);
+      max-width: 620px;
+      font-family: 'Assistant', sans-serif;
+    }
+
+    /* ── GLOBAL: Reveal animation ── */
+    .ssg-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ssg-reveal.ssg-in { opacity: 1; transform: translateY(0); }
+
+    /* ── GLOBAL: Photo utility ── */
+    .ssg-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── HERO ── */
+    .ssg-hero {
+      background: var(--ssg-cream);
+      padding: 120px 0 100px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .ssg-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(154, 127, 61, 0.08), transparent 60%),
+        radial-gradient(ellipse at 10% 90%, rgba(74, 90, 69, 0.10), transparent 55%);
+    }
+    .ssg-hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .ssg-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ssg-ink-mute);
+      margin-bottom: 28px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--ssg-gold);
+    }
+    .ssg-hero-title-hebrew {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--ssg-ink);
+      margin-bottom: 18px;
+      direction: rtl;
+      letter-spacing: -0.01em;
+    }
+    .ssg-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 6.4vw, 86px);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+      color: var(--ssg-ink);
+    }
+    .ssg-hero-title em { font-style: italic; color: var(--ssg-moss); font-weight: 400; }
+    .ssg-hero-translation {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--ssg-ink-mute);
+      margin-bottom: 32px;
+    }
+    .ssg-hero-lede {
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--ssg-ink-soft);
+      max-width: 520px;
+      margin-bottom: 40px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .ssg-hero-image {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .ssg-hero-image-tag {
+      position: absolute;
+      bottom: 28px;
+      right: -1px;
+      background: var(--ssg-cream);
+      padding: 20px 24px;
+      border-left: 2px solid var(--ssg-gold);
+      max-width: 280px;
+    }
+    .ssg-hero-image-tag-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ssg-ink-mute);
+      margin-bottom: 8px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-hero-image-tag-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 1.25;
+      color: var(--ssg-ink);
+    }
+
+    @media (max-width: 980px) {
+      .ssg-hero { padding: 80px 0 60px; }
+      .ssg-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .ssg-hero-image { aspect-ratio: 4/3; }
+      .ssg-container { padding: 0 24px; }
+      .ssg-container-narrow { padding: 0 24px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ MISSION SECTION ═══ -->
+<co:section id="ContentBox" name="mission_section" title="Mission Section" actions="copy,delete,edit">
+
+  <section class="ssg-mission" id="ssg-mission">
+    <div class="ssg-container">
+      <div class="ssg-mission-grid">
+
+        <div class="ssg-reveal">
+          <div class="ssg-section-eyebrow">
+            <co:editable id="Title" name="MissionEyebrow" title="Mission Eyebrow" actions="edit,delete">
+              Our Mission
+            </co:editable>
+          </div>
+          <p class="ssg-mission-quote">
+            <co:editable id="Subtitle" name="MissionQuote" title="Mission Quote" actions="edit,delete">
+              Every Jewish family deserves a sacred and respectful resting place rooted in tradition —
+              regardless of affiliation, regardless of membership.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-mission-body ssg-reveal">
+          <co:editable id="Subtitle" name="MissionBody1" title="Mission Body Paragraph 1" actions="edit,delete">
+            <p>
+              Shaarei Shamayim Gardens exists to serve the <strong>entire Jacksonville Jewish community.</strong>
+              We welcome every family seeking a dignified, traditional burial — without barriers of
+              synagogue membership or denomination.
+            </p>
+          </co:editable>
+          <co:editable id="Subtitle" name="MissionBody2" title="Mission Body Paragraph 2" actions="edit,delete">
+            <p>
+              Conveniently located on Jacksonville's Southside, our gardens are surrounded by natural beauty
+              and meticulously maintained grounds, offering a tranquil environment that reflects
+              honor, reverence, and continuity.
+            </p>
+          </co:editable>
+
+          <div class="ssg-mission-attest">
+            <div class="ssg-mission-attest-label">
+              <co:editable id="Title" name="MissionAttestLabel" title="Attestation Label" actions="edit,delete">
+                Halachic Standards
+              </co:editable>
+            </div>
+            <div class="ssg-mission-attest-text">
+              <co:editable id="Subtitle" name="MissionAttestText" title="Attestation Text" actions="edit,delete">
+                All arrangements and standards are upheld in accordance with the highest rabbinical
+                guidelines for members of the Jewish faith, as determined by the Chief Rabbinate of Israel.
+              </co:editable>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-mission {
+      background: var(--ssg-paper);
+      border-top: 1px solid var(--ssg-line-soft);
+      border-bottom: 1px solid var(--ssg-line-soft);
+      padding: 130px 0;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .ssg-mission-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 38px);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--ssg-ink);
+      letter-spacing: -0.005em;
+    }
+    .ssg-mission-quote::first-letter {
+      font-size: 1.6em;
+      line-height: 1;
+      color: var(--ssg-gold);
+      font-style: normal;
+      float: left;
+      padding-right: 8px;
+      padding-top: 6px;
+    }
+    .ssg-mission-body p {
+      color: var(--ssg-ink-soft);
+      margin-bottom: 22px;
+      font-size: 17px;
+      line-height: 1.7;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-mission-attest {
+      margin-top: 36px;
+      padding: 24px 28px;
+      border-left: 2px solid var(--ssg-gold);
+      background: var(--ssg-cream-soft);
+    }
+    .ssg-mission-attest-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ssg-ink-mute);
+      margin-bottom: 8px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-mission-attest-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--ssg-ink);
+      line-height: 1.4;
+    }
+    @media (max-width: 980px) {
+      .ssg-mission { padding: 80px 0; }
+      .ssg-mission-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ FEATURES SECTION ═══ -->
+<co:section id="ContentBox" name="features_section" title="Features Section" actions="copy,delete,edit">
+
+  <section class="ssg-features" id="ssg-features">
+    <div class="ssg-container">
+
+      <div class="ssg-features-header ssg-reveal">
+        <div>
+          <div class="ssg-section-eyebrow">
+            <co:editable id="Title" name="FeaturesEyebrow" title="Features Eyebrow" actions="edit,delete">
+              Why Shaarei Shamayim
+            </co:editable>
+          </div>
+          <h2 class="ssg-section-title">
+            <co:editable id="Title" name="FeaturesTitle" title="Features Title" actions="edit,delete">
+              A place worthy of <em>those we love.</em>
+            </co:editable>
+          </h2>
+        </div>
+        <div>
+          <p class="ssg-section-lede">
+            <co:editable id="Subtitle" name="FeaturesLede" title="Features Lede" actions="edit,delete">
+              Four commitments shape every decision we make — from the care of our grounds
+              to the way we welcome every family who comes through our gates.
+            </co:editable>
+          </p>
+        </div>
+      </div>
+
+      <div class="ssg-features-grid ssg-reveal">
+
+        <div class="ssg-feature-card">
+          <span class="ssg-feature-num">— i —</span>
+          <h3 class="ssg-feature-title">
+            <co:editable id="Title" name="Feature1Title" title="Feature 1 Title" actions="edit,delete">
+              Tranquil, well-kept grounds
+            </co:editable>
+          </h3>
+          <p class="ssg-feature-body">
+            <co:editable id="Subtitle" name="Feature1Body" title="Feature 1 Body" actions="edit,delete">
+              Set on Jacksonville's Southside, our gardens are tended year-round — paths quiet,
+              trees mature, every stone respected. A place that feels like the visit you wanted to make.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-feature-card">
+          <span class="ssg-feature-num">— ii —</span>
+          <h3 class="ssg-feature-title">
+            <co:editable id="Title" name="Feature2Title" title="Feature 2 Title" actions="edit,delete">
+              Family plots, side by side
+            </co:editable>
+          </h3>
+          <p class="ssg-feature-body">
+            <co:editable id="Subtitle" name="Feature2Body" title="Feature 2 Body" actions="edit,delete">
+              Reserve adjacent plots so spouses, parents, and children may rest together.
+              The comfort of proximity is something families ask for — and something we make easy to arrange.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-feature-card">
+          <span class="ssg-feature-num">— iii —</span>
+          <h3 class="ssg-feature-title">
+            <co:editable id="Title" name="Feature3Title" title="Feature 3 Title" actions="edit,delete">
+              Honest, accessible pricing
+            </co:editable>
+          </h3>
+          <p class="ssg-feature-body">
+            <co:editable id="Subtitle" name="Feature3Body" title="Feature 3 Body" actions="edit,delete">
+              A sacred resting place should be within reach of every Jewish family. Our pricing
+              is transparent, fair, and consistent — never inflated, never unclear.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-feature-card">
+          <span class="ssg-feature-num">— iv —</span>
+          <h3 class="ssg-feature-title">
+            <co:editable id="Title" name="Feature4Title" title="Feature 4 Title" actions="edit,delete">
+              Zero-interest payment plans
+            </co:editable>
+          </h3>
+          <p class="ssg-feature-body">
+            <co:editable id="Subtitle" name="Feature4Body" title="Feature 4 Body" actions="edit,delete">
+              Flexible installment options with <strong>no interest</strong>, ever. Plan today at today's rate,
+              on a schedule that respects your family's circumstances.
+            </co:editable>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-features {
+      background: var(--ssg-cream);
+      padding: 130px 0;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-features-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+    .ssg-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--ssg-line);
+      border: 1px solid var(--ssg-line);
+    }
+    .ssg-feature-card {
+      background: var(--ssg-cream);
+      padding: 48px 44px;
+      transition: background 0.3s ease;
+    }
+    .ssg-feature-card:hover { background: var(--ssg-paper); }
+    .ssg-feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--ssg-gold);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .ssg-feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      color: var(--ssg-ink);
+    }
+    .ssg-feature-body {
+      color: var(--ssg-ink-soft);
+      font-size: 16px;
+      line-height: 1.65;
+      font-family: 'Assistant', sans-serif;
+    }
+    @media (max-width: 980px) {
+      .ssg-features { padding: 80px 0; }
+      .ssg-features-header { grid-template-columns: 1fr; gap: 40px; }
+      .ssg-features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ GALLERY SECTION ═══ -->
+<co:section id="ContentBox" name="gallery_section" title="Gallery Section" actions="copy,delete,edit">
+
+  <div class="ssg-gallery">
+    <div class="ssg-gallery-row">
+
+      <div class="ssg-gallery-tile">
+        <co:editable id="picture" tag_only="true" attribute="src" name="GalleryImage1" title="Gallery Image 1 — Oak Grove" actions="delete">
+          <img class="ssg-photo" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&auto=format&fit=crop&q=80" border="0" alt="Mature oak canopy">
+        </co:editable>
+        <div class="ssg-gallery-tile-meta">
+          <co:editable id="Title" name="GalleryMeta1" title="Gallery Caption 1" actions="edit,delete">
+            The Oak Grove
+          </co:editable>
+        </div>
+      </div>
+
+      <div class="ssg-gallery-tile">
+        <co:editable id="picture" tag_only="true" attribute="src" name="GalleryImage2" title="Gallery Image 2 — Entrance" actions="delete">
+          <img class="ssg-photo" src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=800&h=600&auto=format&fit=crop&q=80" border="0" alt="Entry gate at golden hour">
+        </co:editable>
+        <div class="ssg-gallery-tile-meta">
+          <co:editable id="Title" name="GalleryMeta2" title="Gallery Caption 2" actions="edit,delete">
+            The Entrance
+          </co:editable>
+        </div>
+      </div>
+
+      <div class="ssg-gallery-tile">
+        <co:editable id="picture" tag_only="true" attribute="src" name="GalleryImage3" title="Gallery Image 3 — Path" actions="delete">
+          <img class="ssg-photo" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&auto=format&fit=crop&q=80" border="0" alt="Walking path between sections">
+        </co:editable>
+        <div class="ssg-gallery-tile-meta">
+          <co:editable id="Title" name="GalleryMeta3" title="Gallery Caption 3" actions="edit,delete">
+            Walking Path
+          </co:editable>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .ssg-gallery { background: var(--ssg-cream); }
+    .ssg-gallery-row {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.2fr;
+      height: 56vh;
+      min-height: 440px;
+    }
+    .ssg-gallery-tile {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: filter 0.4s ease;
+    }
+    .ssg-gallery-tile:hover { filter: brightness(0.95); }
+    .ssg-gallery-tile .ssg-photo { height: 100%; }
+    .ssg-gallery-tile-meta {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(241, 236, 224, 0.95);
+      padding: 10px 16px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ssg-ink);
+      font-weight: 500;
+      font-family: 'Assistant', sans-serif;
+    }
+    @media (max-width: 980px) {
+      .ssg-gallery-row { grid-template-columns: 1fr; height: auto; }
+      .ssg-gallery-tile { height: 280px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ PLAN TODAY SECTION ═══ -->
+<co:section id="ContentBox" name="plan_section" title="Plan Today Section" actions="copy,delete,edit">
+
+  <section class="ssg-plan" id="ssg-plan">
+    <div class="ssg-container">
+      <div class="ssg-plan-inner">
+
+        <div class="ssg-reveal">
+          <div class="ssg-plan-eyebrow">
+            <co:editable id="Title" name="PlanEyebrow" title="Plan Eyebrow" actions="edit,delete">
+              Plan Today For Tomorrow
+            </co:editable>
+          </div>
+          <h2 class="ssg-plan-title">
+            <co:editable id="Title" name="PlanTitle" title="Plan Title" actions="edit,delete">
+              The greatest gift you can give the people you <em>love.</em>
+            </co:editable>
+          </h2>
+          <p class="ssg-plan-lede">
+            <co:editable id="Subtitle" name="PlanLede" title="Plan Lede" actions="edit,delete">
+              Planning ahead removes uncertainty, prevents emotional and financial strain in a difficult
+              moment, and ensures your wishes are carried out exactly as you intend.
+            </co:editable>
+          </p>
+
+          <div class="ssg-plan-points">
+            <div class="ssg-plan-point">
+              <div class="ssg-plan-point-num">i.</div>
+              <div class="ssg-plan-point-text">
+                <co:editable id="Subtitle" name="PlanPoint1" title="Plan Point 1" actions="edit,delete">
+                  <strong>True peace of mind, today</strong>
+                  The decision is made, the place is chosen — and you carry less of an unspoken weight.
+                </co:editable>
+              </div>
+            </div>
+            <div class="ssg-plan-point">
+              <div class="ssg-plan-point-num">ii.</div>
+              <div class="ssg-plan-point-text">
+                <co:editable id="Subtitle" name="PlanPoint2" title="Plan Point 2" actions="edit,delete">
+                  <strong>Spares your family last-minute strain</strong>
+                  No frantic decisions in the most difficult hours. They can grieve, not negotiate.
+                </co:editable>
+              </div>
+            </div>
+            <div class="ssg-plan-point">
+              <div class="ssg-plan-point-num">iii.</div>
+              <div class="ssg-plan-point-text">
+                <co:editable id="Subtitle" name="PlanPoint3" title="Plan Point 3" actions="edit,delete">
+                  <strong>Locks in today's rates</strong>
+                  Pricing is scheduled to increase in the coming months. Reserving now fixes your cost at today's level.
+                </co:editable>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ssg-plan-card ssg-reveal">
+          <span class="ssg-plan-card-mark"></span>
+          <span class="ssg-plan-card-mark ssg-plan-card-mark-br"></span>
+          <div class="ssg-plan-card-eyebrow">
+            <co:editable id="Title" name="PlanCardEyebrow" title="Tradition Card Eyebrow" actions="edit,delete">
+              A Note from Tradition
+            </co:editable>
+          </div>
+          <div class="ssg-plan-card-hebrew">
+            <co:editable id="Title" name="PlanCardHebrew" title="Tradition Card Hebrew" actions="edit,delete">
+              סְגֻלָּה
+            </co:editable>
+          </div>
+          <div class="ssg-plan-card-translit">
+            <co:editable id="Subtitle" name="PlanCardTranslit" title="Tradition Card Transliteration" actions="edit,delete">
+              — Segulah · A Spiritual Merit —
+            </co:editable>
+          </div>
+          <p class="ssg-plan-card-body">
+            <co:editable id="Subtitle" name="PlanCardBody" title="Tradition Card Body" actions="edit,delete">
+              In our tradition, to <em>arrange one's resting place in advance</em> is considered a
+              <em>segulah</em> — a spiritual merit for long life. By acting with foresight and dignity
+              for those who come after us, we honor a wisdom passed down through generations.
+              <br><br>Planning is not an end. It is an expression of love.
+            </co:editable>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-plan {
+      background: var(--ssg-ink);
+      color: var(--ssg-cream);
+      padding: 130px 0;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-plan::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 90% 10%, rgba(196, 169, 97, 0.10), transparent 50%),
+        radial-gradient(ellipse at 10% 90%, rgba(74, 90, 69, 0.18), transparent 50%);
+      pointer-events: none;
+    }
+    .ssg-plan-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .ssg-plan-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ssg-gold-soft);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .ssg-plan-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--ssg-gold-soft); flex-shrink: 0; }
+    .ssg-plan-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4.6vw, 60px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ssg-cream);
+      margin-bottom: 28px;
+    }
+    .ssg-plan-title em { font-style: italic; color: var(--ssg-gold-soft); }
+    .ssg-plan-lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(241, 236, 224, 0.78);
+      max-width: 620px;
+    }
+    .ssg-plan-points { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+    .ssg-plan-point {
+      display: flex;
+      gap: 22px;
+      align-items: start;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(241, 236, 224, 0.12);
+    }
+    .ssg-plan-point:last-child { border-bottom: none; }
+    .ssg-plan-point-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: var(--ssg-gold-soft);
+      line-height: 1;
+      min-width: 40px;
+    }
+    .ssg-plan-point-text { font-size: 18px; line-height: 1.55; color: rgba(241, 236, 224, 0.88); }
+    .ssg-plan-point-text strong {
+      color: var(--ssg-cream);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+    .ssg-plan-card {
+      background: rgba(241, 236, 224, 0.04);
+      border: 1px solid rgba(196, 169, 97, 0.25);
+      padding: 48px 44px;
+      position: relative;
+    }
+    .ssg-plan-card-mark {
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 28px; height: 28px;
+      border-top: 2px solid var(--ssg-gold-soft);
+      border-left: 2px solid var(--ssg-gold-soft);
+    }
+    .ssg-plan-card-mark-br {
+      top: auto; left: auto;
+      bottom: -1px; right: -1px;
+      border-top: none; border-left: none;
+      border-bottom: 2px solid var(--ssg-gold-soft);
+      border-right: 2px solid var(--ssg-gold-soft);
+    }
+    .ssg-plan-card-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ssg-gold-soft);
+      margin-bottom: 16px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-plan-card-hebrew {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--ssg-cream);
+      direction: rtl;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .ssg-plan-card-translit {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--ssg-gold-soft);
+      margin-bottom: 20px;
+    }
+    .ssg-plan-card-body { font-size: 17px; line-height: 1.65; color: rgba(241, 236, 224, 0.82); }
+    .ssg-plan-card-body em { color: var(--ssg-cream); font-style: italic; }
+    @media (max-width: 980px) {
+      .ssg-plan { padding: 80px 0; }
+      .ssg-plan-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ ACT NOW SECTION ═══ -->
+<co:section id="ContentBox" name="actnow_section" title="Act Now Section" actions="copy,delete,edit">
+
+  <section class="ssg-actnow">
+    <div class="ssg-container">
+
+      <div class="ssg-reveal">
+        <div class="ssg-section-eyebrow">
+          <co:editable id="Title" name="ActNowEyebrow" title="Act Now Eyebrow" actions="edit,delete">
+            Why Act Now
+          </co:editable>
+        </div>
+        <h2 class="ssg-section-title">
+          <co:editable id="Title" name="ActNowTitle" title="Act Now Title" actions="edit,delete">
+            Three reasons families <em>do not wait.</em>
+          </co:editable>
+        </h2>
+      </div>
+
+      <div class="ssg-actnow-grid ssg-reveal">
+
+        <div class="ssg-actnow-item">
+          <div class="ssg-actnow-item-num">01.</div>
+          <h3 class="ssg-actnow-item-title">
+            <co:editable id="Title" name="ActNow1Title" title="Act Now Item 1 Title" actions="edit,delete">
+              Lock in today's pricing
+            </co:editable>
+          </h3>
+          <p class="ssg-actnow-item-body">
+            <co:editable id="Subtitle" name="ActNow1Body" title="Act Now Item 1 Body" actions="edit,delete">
+              Rates are scheduled to increase in the coming months. Reserving today means
+              your cost is fixed — no surprises, no escalation.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-actnow-item">
+          <div class="ssg-actnow-item-num">02.</div>
+          <h3 class="ssg-actnow-item-title">
+            <co:editable id="Title" name="ActNow2Title" title="Act Now Item 2 Title" actions="edit,delete">
+              Choose family proximity
+            </co:editable>
+          </h3>
+          <p class="ssg-actnow-item-body">
+            <co:editable id="Subtitle" name="ActNow2Body" title="Act Now Item 2 Body" actions="edit,delete">
+              Reserving early gives you the freedom to select adjacent plots so loved ones
+              may rest side by side — a choice that grows scarcer with time.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-actnow-item">
+          <div class="ssg-actnow-item-num">03.</div>
+          <h3 class="ssg-actnow-item-title">
+            <co:editable id="Title" name="ActNow3Title" title="Act Now Item 3 Title" actions="edit,delete">
+              Decide on your own terms
+            </co:editable>
+          </h3>
+          <p class="ssg-actnow-item-body">
+            <co:editable id="Subtitle" name="ActNow3Body" title="Act Now Item 3 Body" actions="edit,delete">
+              Make this decision in peace and on your timeline — not under pressure,
+              not in grief. A clarity that becomes a kindness to everyone who loves you.
+            </co:editable>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-actnow {
+      background: var(--ssg-cream-soft);
+      padding: 130px 0;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-actnow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      margin-top: 64px;
+    }
+    .ssg-actnow-item {
+      border-top: 1px solid var(--ssg-ink);
+      padding-top: 28px;
+    }
+    .ssg-actnow-item-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--ssg-gold);
+      margin-bottom: 16px;
+    }
+    .ssg-actnow-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--ssg-ink);
+    }
+    .ssg-actnow-item-body {
+      color: var(--ssg-ink-soft);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    @media (max-width: 980px) {
+      .ssg-actnow { padding: 80px 0; }
+      .ssg-actnow-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ FAQ SECTION ═══ -->
+<co:section id="ContentBox" name="faq_section" title="FAQ Section" actions="copy,delete,edit">
+
+  <section class="ssg-faq" id="ssg-faq">
+    <div class="ssg-container-narrow">
+
+      <div class="ssg-reveal">
+        <div class="ssg-section-eyebrow">
+          <co:editable id="Title" name="FaqEyebrow" title="FAQ Eyebrow" actions="edit,delete">
+            Common Questions
+          </co:editable>
+        </div>
+        <h2 class="ssg-section-title">
+          <co:editable id="Title" name="FaqTitle" title="FAQ Title" actions="edit,delete">
+            Answers, gently <em>given.</em>
+          </co:editable>
+        </h2>
+      </div>
+
+      <div class="ssg-faq-list">
+
+        <div class="ssg-faq-item">
+          <button class="ssg-faq-q">
+            <co:editable id="Title" name="Faq1Q" title="FAQ 1 Question" actions="edit,delete">
+              Must we be members of a particular synagogue?
+            </co:editable>
+            <span class="ssg-faq-q-mark"></span>
+          </button>
+          <div class="ssg-faq-a">
+            <p>
+              <co:editable id="Subtitle" name="Faq1A" title="FAQ 1 Answer" actions="edit,delete">
+                No. Shaarei Shamayim Gardens is here for the <em>entire</em> Jacksonville Jewish community —
+                regardless of affiliation, denomination, or synagogue membership. Every Jewish family is welcome.
+              </co:editable>
+            </p>
+          </div>
+        </div>
+
+        <div class="ssg-faq-item">
+          <button class="ssg-faq-q">
+            <co:editable id="Title" name="Faq2Q" title="FAQ 2 Question" actions="edit,delete">
+              What halachic standards do you follow?
+            </co:editable>
+            <span class="ssg-faq-q-mark"></span>
+          </button>
+          <div class="ssg-faq-a">
+            <p>
+              <co:editable id="Subtitle" name="Faq2A" title="FAQ 2 Answer" actions="edit,delete">
+                All arrangements and standards are upheld in accordance with the highest rabbinical
+                guidelines for members of the Jewish faith, as determined by the Chief Rabbinate of Israel.
+              </co:editable>
+            </p>
+          </div>
+        </div>
+
+        <div class="ssg-faq-item">
+          <button class="ssg-faq-q">
+            <co:editable id="Title" name="Faq3Q" title="FAQ 3 Question" actions="edit,delete">
+              Can family members be buried close to one another?
+            </co:editable>
+            <span class="ssg-faq-q-mark"></span>
+          </button>
+          <div class="ssg-faq-a">
+            <p>
+              <co:editable id="Subtitle" name="Faq3A" title="FAQ 3 Answer" actions="edit,delete">
+                Yes. Adjacent plots may be reserved together so that spouses, parents, and children
+                can rest side by side. We help you map this out at the time of your visit.
+              </co:editable>
+            </p>
+          </div>
+        </div>
+
+        <div class="ssg-faq-item">
+          <button class="ssg-faq-q">
+            <co:editable id="Title" name="Faq4Q" title="FAQ 4 Question" actions="edit,delete">
+              What payment options are available?
+            </co:editable>
+            <span class="ssg-faq-q-mark"></span>
+          </button>
+          <div class="ssg-faq-a">
+            <p>
+              <co:editable id="Subtitle" name="Faq4A" title="FAQ 4 Answer" actions="edit,delete">
+                Our pricing is transparent, and we offer flexible installment plans with <strong>zero interest</strong>.
+                Reach out and we'll walk you through what works for your family's circumstances.
+              </co:editable>
+            </p>
+          </div>
+        </div>
+
+        <div class="ssg-faq-item">
+          <button class="ssg-faq-q">
+            <co:editable id="Title" name="Faq5Q" title="FAQ 5 Question" actions="edit,delete">
+              May we visit the grounds before making any decision?
+            </co:editable>
+            <span class="ssg-faq-q-mark"></span>
+          </button>
+          <div class="ssg-faq-a">
+            <p>
+              <co:editable id="Subtitle" name="Faq5A" title="FAQ 5 Answer" actions="edit,delete">
+                Absolutely — and we encourage it. Use the contact form below to schedule a private visit
+                at a time that suits you. There is no obligation; only the chance to see the gardens for yourself.
+              </co:editable>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-faq {
+      background: var(--ssg-paper);
+      padding: 130px 0;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-faq-list {
+      margin-top: 60px;
+      border-top: 1px solid var(--ssg-line);
+    }
+    .ssg-faq-item { border-bottom: 1px solid var(--ssg-line); }
+    .ssg-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 28px 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--ssg-ink);
+      transition: color 0.2s;
+    }
+    .ssg-faq-q:hover { color: var(--ssg-moss); }
+    .ssg-faq-q-mark {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      color: var(--ssg-gold);
+    }
+    .ssg-faq-q-mark::before,
+    .ssg-faq-q-mark::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      transition: transform 0.3s ease;
+    }
+    .ssg-faq-q-mark::before { width: 100%; height: 1px; top: 50%; left: 0; }
+    .ssg-faq-q-mark::after { width: 1px; height: 100%; left: 50%; top: 0; }
+    .ssg-faq-item.ssg-open .ssg-faq-q-mark::after { transform: scaleY(0); }
+    .ssg-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      color: var(--ssg-ink-soft);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .ssg-faq-item.ssg-open .ssg-faq-a { max-height: 400px; padding: 0 0 32px 0; }
+    .ssg-faq-a p { max-width: 720px; }
+    @media (max-width: 980px) {
+      .ssg-faq { padding: 80px 0; }
+      .ssg-faq-q { font-size: 20px; }
+    }
+  </style>
+
+  <script>
+    document.querySelectorAll('.ssg-faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.ssg-faq-item');
+        var isOpen = item.classList.contains('ssg-open');
+        document.querySelectorAll('.ssg-faq-item').forEach(function(x) { x.classList.remove('ssg-open'); });
+        if (!isOpen) item.classList.add('ssg-open');
+      });
+    });
+  </script>
+
+</co:section>
+
+
+<!-- ═══ CONTACT SECTION ═══ -->
+<co:section id="ContentBox" name="contact_section" title="Contact Section" actions="copy,delete,edit">
+
+  <section class="ssg-contact" id="ssg-contact">
+    <div class="ssg-container">
+
+      <div class="ssg-reveal">
+        <div class="ssg-section-eyebrow">
+          <co:editable id="Title" name="ContactEyebrow" title="Contact Eyebrow" actions="edit,delete">
+            Visit · Speak With Us
+          </co:editable>
+        </div>
+        <h2 class="ssg-section-title">
+          <co:editable id="Title" name="ContactTitle" title="Contact Title" actions="edit,delete">
+            Come walk the grounds. We'll <em>meet you there.</em>
+          </co:editable>
+        </h2>
+        <p class="ssg-section-lede">
+          <co:editable id="Subtitle" name="ContactLede" title="Contact Lede" actions="edit,delete">
+            Reach out to schedule a private visit, ask a question, or request our pricing guide.
+            Rabbi Velvil and our team respond personally — usually within one business day.
+          </co:editable>
+        </p>
+      </div>
+
+      <div class="ssg-contact-grid">
+
+        <div class="ssg-reveal">
+
+          <div class="ssg-contact-info-item">
+            <div class="ssg-contact-info-label">Call</div>
+            <div>
+              <div class="ssg-contact-info-value">
+                <co:editable id="link" tag_only="true" attribute="href,innertext" name="ContactPhone" title="Contact Phone" actions="edit,delete">
+                  <a href="tel:9042626641">904 · 262 · 6641</a>
+                </co:editable>
+              </div>
+              <span class="ssg-contact-info-sub">
+                <co:editable id="Subtitle" name="ContactPhoneSub" title="Phone Hours" actions="edit,delete">
+                  Mon – Thu · 9 am – 5 pm  ·  Fri · 9 am – 1 pm
+                </co:editable>
+              </span>
+            </div>
+          </div>
+
+          <div class="ssg-contact-info-item">
+            <div class="ssg-contact-info-label">Email</div>
+            <div>
+              <div class="ssg-contact-info-value">
+                <co:editable id="link" tag_only="true" attribute="href,innertext" name="ContactEmail" title="Contact Email" actions="edit,delete">
+                  <a href="mailto:rabbivelvil@chabadjacksonville.org">rabbivelvil@chabadjacksonville.org</a>
+                </co:editable>
+              </div>
+              <span class="ssg-contact-info-sub">
+                <co:editable id="Subtitle" name="ContactEmailSub" title="Email Sub" actions="edit,delete">
+                  Rabbi Velvil · personal response within one business day
+                </co:editable>
+              </span>
+            </div>
+          </div>
+
+          <div class="ssg-contact-info-item">
+            <div class="ssg-contact-info-label">Visit</div>
+            <div>
+              <div class="ssg-contact-info-value">
+                <co:editable id="Title" name="ContactAddress" title="Contact Address" actions="edit,delete">
+                  4300 Beach Blvd,<br>Jacksonville, FL 32207
+                </co:editable>
+              </div>
+              <span class="ssg-contact-info-sub">
+                <co:editable id="Subtitle" name="ContactAddressSub" title="Address Sub" actions="edit,delete">
+                  Private visits by appointment — please call ahead
+                </co:editable>
+              </span>
+            </div>
+          </div>
+
+          <div class="ssg-contact-cta">
+            <co:editable id="link" tag_only="true" attribute="href,innertext" name="ContactCTA" title="Contact CTA Button" actions="edit,delete">
+              <a class="ssg-btn" href="#ssg-modal">Request Information →</a>
+            </co:editable>
+          </div>
+
+        </div>
+
+        <div class="ssg-contact-map ssg-reveal">
+          <div class="ssg-map-wrap">
+            <co:editable id="picture" tag_only="true" attribute="src" name="ContactMap" title="Google Maps Embed URL" actions="edit">
+              <iframe
+                src="https://maps.google.com/maps?q=4300+Beach+Blvd,+Jacksonville,+FL+32207&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Shaarei Shamayim Gardens — 4300 Beach Blvd, Jacksonville, FL 32207">
+              </iframe>
+            </co:editable>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ssg-contact {
+      background: var(--ssg-cream);
+      padding: 130px 0;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 60px;
+    }
+    .ssg-contact-info-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--ssg-line);
+      display: flex;
+      gap: 24px;
+      align-items: start;
+    }
+    .ssg-contact-info-item:first-child { padding-top: 0; }
+    .ssg-contact-info-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ssg-gold);
+      min-width: 80px;
+      padding-top: 4px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-contact-info-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--ssg-ink);
+      line-height: 1.3;
+      flex: 1;
+    }
+    .ssg-contact-info-value a {
+      color: var(--ssg-ink);
+      text-decoration: none !important;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .ssg-contact-info-value a:hover { border-bottom-color: var(--ssg-gold); }
+    .ssg-contact-info-sub {
+      font-family: 'Assistant', sans-serif;
+      font-size: 14px;
+      color: var(--ssg-ink-mute);
+      margin-top: 4px;
+      display: block;
+    }
+    .ssg-contact-cta { padding-top: 32px; }
+    .ssg-contact-map {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid var(--ssg-line);
+    }
+    .ssg-map-wrap { width: 100%; height: 100%; }
+    @media (max-width: 980px) {
+      .ssg-contact { padding: 80px 0; }
+      .ssg-contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ssg-contact-map { aspect-ratio: 4/3; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ FOOTER SECTION ═══ -->
+<co:section id="ContentBox" name="footer_section" title="Footer Section" actions="copy,delete,edit">
+
+  <footer class="ssg-footer">
+    <div class="ssg-container">
+      <div class="ssg-footer-grid">
+
+        <div>
+          <div class="ssg-footer-brand-hebrew">
+            <co:editable id="Title" name="FooterHebrew" title="Footer Hebrew" actions="edit,delete">
+              שַׁעֲרֵי שָׁמַיִם
+            </co:editable>
+          </div>
+          <div class="ssg-footer-brand">
+            <co:editable id="Title" name="FooterBrand" title="Footer Brand Name" actions="edit,delete">
+              Shaarei Shamayim Gardens
+            </co:editable>
+          </div>
+          <p class="ssg-footer-tag">
+            <co:editable id="Subtitle" name="FooterTagline" title="Footer Tagline" actions="edit,delete">
+              A serene and beautiful final resting place for the Jacksonville Jewish community —
+              held to the highest rabbinical standards, open to every Jewish family.
+            </co:editable>
+          </p>
+        </div>
+
+        <div class="ssg-footer-col">
+          <h4>
+            <co:editable id="Title" name="FooterCol1Heading" title="Footer Column 1 Heading" actions="edit,delete">
+              Explore
+            </co:editable>
+          </h4>
+          <ul>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterLink1" title="Footer Link 1" actions="edit,delete">
+                <a href="#ssg-mission">Our Mission</a>
+              </co:editable>
+            </li>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterLink2" title="Footer Link 2" actions="edit,delete">
+                <a href="#ssg-features">The Gardens</a>
+              </co:editable>
+            </li>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterLink3" title="Footer Link 3" actions="edit,delete">
+                <a href="#ssg-plan">Plan Ahead</a>
+              </co:editable>
+            </li>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterLink4" title="Footer Link 4" actions="edit,delete">
+                <a href="#ssg-faq">Questions</a>
+              </co:editable>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ssg-footer-col">
+          <h4>
+            <co:editable id="Title" name="FooterCol2Heading" title="Footer Column 2 Heading" actions="edit,delete">
+              Contact
+            </co:editable>
+          </h4>
+          <ul>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterContactLink1" title="Footer Contact Phone" actions="edit,delete">
+                <a href="tel:9042626641">904 · 262 · 6641</a>
+              </co:editable>
+            </li>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterContactLink2" title="Footer Contact Email" actions="edit,delete">
+                <a href="mailto:rabbivelvil@chabadjacksonville.org">Email Rabbi Velvil</a>
+              </co:editable>
+            </li>
+            <li>
+              <co:editable id="link" tag_only="true" attribute="href,innertext" name="FooterContactLink3" title="Footer Contact Visit" actions="edit,delete">
+                <a href="#ssg-contact">Schedule a Visit</a>
+              </co:editable>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="ssg-footer-bot">
+        <span>
+          <co:editable id="Title" name="FooterCopyright" title="Footer Copyright" actions="edit,delete">
+            © 2026 Shaarei Shamayim Gardens · Jacksonville, FL
+          </co:editable>
+        </span>
+        <span>
+          <co:editable id="Title" name="FooterHebrew2" title="Footer Hebrew Closing" actions="edit,delete">
+            זִכְרוֹנָם לִבְרָכָה
+          </co:editable>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .ssg-footer {
+      background: var(--ssg-ink);
+      color: rgba(241, 236, 224, 0.7);
+      padding: 80px 0 36px;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    .ssg-footer-brand-hebrew {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 26px;
+      color: var(--ssg-gold-soft);
+      direction: rtl;
+      margin-bottom: 4px;
+    }
+    .ssg-footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ssg-cream);
+      font-size: 24px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .ssg-footer-tag {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 340px;
+      color: rgba(241, 236, 224, 0.6);
+    }
+    .ssg-footer-col h4 {
+      font-family: 'Assistant', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ssg-gold-soft);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .ssg-footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .ssg-footer-col li { margin-bottom: 10px; }
+    .ssg-footer-col a {
+      color: rgba(241, 236, 224, 0.7);
+      text-decoration: none !important;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    .ssg-footer-col a:hover { color: var(--ssg-cream); }
+    .ssg-footer-bot {
+      padding-top: 30px;
+      border-top: 1px solid rgba(241, 236, 224, 0.12);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(241, 236, 224, 0.45);
+    }
+    @media (max-width: 980px) {
+      .ssg-footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+
+</co:section>
+
+
+<!-- ═══ MODAL + FORM SECTION ═══ -->
+<co:section id="ContentBox" name="modal_section" title="Contact Form Modal" actions="copy,delete,edit">
+
+  <div class="ssg-modal-overlay" id="ssg-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="ssg-modal">
+      <button class="ssg-modal-close" aria-label="Close" id="ssg-modal-close">✕</button>
+
+      <div id="ssg-modal-form-body">
+        <h3 class="ssg-modal-title">
+          <co:editable id="Title" name="ModalTitle" title="Modal Title" actions="edit,delete">
+            Request Information
+          </co:editable>
+        </h3>
+        <p class="ssg-modal-sub">
+          <co:editable id="Subtitle" name="ModalSubtitle" title="Modal Subtitle" actions="edit,delete">
+            Share a few details and we'll be in touch personally — usually within one business day.
+          </co:editable>
+        </p>
+        <form id="ssg-contact-form" novalidate>
+          <div class="ssg-field-row">
+            <div class="ssg-field">
+              <label for="ssg-first">First name</label>
+              <input id="ssg-first" name="first" type="text" required>
+            </div>
+            <div class="ssg-field">
+              <label for="ssg-last">Last name</label>
+              <input id="ssg-last" name="last" type="text" required>
+            </div>
+          </div>
+          <div class="ssg-field">
+            <label for="ssg-email">Email</label>
+            <input id="ssg-email" name="email" type="email" required>
+          </div>
+          <div class="ssg-field">
+            <label for="ssg-phone">Phone (optional)</label>
+            <input id="ssg-phone" name="phone" type="tel">
+          </div>
+          <div class="ssg-field">
+            <label for="ssg-interest">I'm interested in</label>
+            <select id="ssg-interest" name="interest">
+              <option>Scheduling a private visit</option>
+              <option>Receiving the pricing guide</option>
+              <option>Reserving a family plot</option>
+              <option>General information</option>
+            </select>
+          </div>
+          <div class="ssg-field">
+            <label for="ssg-note">Anything you'd like us to know (optional)</label>
+            <textarea id="ssg-note" name="note" placeholder="A question, a family circumstance, a preferred time to be reached…"></textarea>
+          </div>
+          <button type="submit" class="ssg-btn ssg-btn-full">
+            <co:editable id="Title" name="ModalSubmitBtn" title="Modal Submit Button Text" actions="edit,delete">
+              Send Request →
+            </co:editable>
+          </button>
+        </form>
+      </div>
+
+      <div id="ssg-modal-success-body" style="display:none;">
+        <div class="ssg-form-success">
+          <div class="ssg-form-success-mark">✓</div>
+          <h4 class="ssg-form-success-h">
+            <co:editable id="Title" name="ModalSuccessTitle" title="Success Title" actions="edit,delete">
+              Thank you.
+            </co:editable>
+          </h4>
+          <p class="ssg-form-success-p">
+            <co:editable id="Subtitle" name="ModalSuccessBody" title="Success Body" actions="edit,delete">
+              Your request has reached us. Rabbi Velvil or a member of our team will be in touch
+              personally — usually within one business day.<br><br><em>בְּשׁוּרוֹת טוֹבוֹת.</em>
+            </co:editable>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .ssg-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 42, 35, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .ssg-modal-overlay.ssg-open { opacity: 1; visibility: visible; }
+    .ssg-modal {
+      background: var(--ssg-cream);
+      max-width: 580px;
+      width: 100%;
+      padding: 56px 48px;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      max-height: 92vh;
+      overflow-y: auto;
+      font-family: 'Assistant', sans-serif;
+    }
+    .ssg-modal-overlay.ssg-open .ssg-modal { transform: translateY(0); }
+    .ssg-modal-close {
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 36px; height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--ssg-ink-mute);
+      font-size: 24px;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .ssg-modal-close:hover { color: var(--ssg-ink); }
+    .ssg-modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      color: var(--ssg-ink);
+    }
+    .ssg-modal-sub { color: var(--ssg-ink-mute); font-size: 15px; margin-bottom: 32px; }
+    .ssg-field { margin-bottom: 20px; }
+    .ssg-field label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ssg-ink-mute);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .ssg-field input,
+    .ssg-field textarea,
+    .ssg-field select {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--ssg-paper);
+      border: 1px solid var(--ssg-line);
+      color: var(--ssg-ink);
+      font-family: 'Assistant', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .ssg-field input:focus,
+    .ssg-field textarea:focus,
+    .ssg-field select:focus {
+      outline: none;
+      border-color: var(--ssg-gold);
+      background: var(--ssg-cream);
+    }
+    .ssg-field textarea { resize: vertical; min-height: 90px; }
+    .ssg-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ssg-btn-full { width: 100%; justify-content: center; }
+    .ssg-form-success { text-align: center; padding: 30px 10px; }
+    .ssg-form-success-mark {
+      width: 60px; height: 60px;
+      margin: 0 auto 22px;
+      border: 1px solid var(--ssg-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ssg-gold);
+      font-size: 28px;
+    }
+    .ssg-form-success-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--ssg-ink);
+    }
+    .ssg-form-success-p { color: var(--ssg-ink-soft); font-size: 16px; line-height: 1.55; }
+    @media (max-width: 640px) {
+      .ssg-modal { padding: 40px 24px; }
+      .ssg-field-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script>
+    // Reveal on scroll
+    (function() {
+      var revealEls = document.querySelectorAll('.ssg-reveal');
+      var revealAll = function() { revealEls.forEach(function(el) { el.classList.add('ssg-in'); }); };
+      if (!('IntersectionObserver' in window)) { revealAll(); return; }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('ssg-in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+      revealEls.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.95) { el.classList.add('ssg-in'); }
+        else { io.observe(el); }
+      });
+      setTimeout(revealAll, 1400);
+    })();
+
+    // Modal open/close
+    var ssgModal = document.getElementById('ssg-modal');
+    var ssgFormBody = document.getElementById('ssg-modal-form-body');
+    var ssgSuccessBody = document.getElementById('ssg-modal-success-body');
+
+    function ssgOpenModal() {
+      ssgModal.classList.add('ssg-open');
+      ssgModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      ssgFormBody.style.display = '';
+      ssgSuccessBody.style.display = 'none';
+    }
+    function ssgCloseModal() {
+      ssgModal.classList.remove('ssg-open');
+      ssgModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('ssg-modal-close').addEventListener('click', ssgCloseModal);
+    ssgModal.addEventListener('click', function(e) { if (e.target === ssgModal) ssgCloseModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') ssgCloseModal(); });
+
+    // Wire any .ssg-btn[href="#ssg-modal"] links to open the modal
+    document.querySelectorAll('a[href="#ssg-modal"]').forEach(function(a) {
+      a.addEventListener('click', function(e) { e.preventDefault(); ssgOpenModal(); });
+    });
+
+    // Form submit
+    var ssgForm = document.getElementById('ssg-contact-form');
+    if (ssgForm) {
+      ssgForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var first = ssgForm.first.value.trim();
+        var last = ssgForm.last.value.trim();
+        var email = ssgForm.email.value.trim();
+        var ok = true;
+        [['first', first], ['last', last], ['email', email]].forEach(function(pair) {
+          var f = ssgForm[pair[0]];
+          f.style.borderColor = pair[1] ? '' : '#B85436';
+          if (!pair[1]) ok = false;
+        });
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          ssgForm.email.style.borderColor = '#B85436';
+          ok = false;
+        }
+        if (!ok) return;
+        ssgFormBody.style.display = 'none';
+        ssgSuccessBody.style.display = '';
+      });
+    }
+  </script>
+
+</co:section>
