@@ -1263,51 +1263,7 @@
   .map-placeholder {
     width: 100%;
     height: 100%;
-    background:
-      linear-gradient(135deg, #DCD5C3 0%, #C8C0A8 100%);
-    position: relative;
-  }
-  .map-placeholder svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-  }
-  .map-pin {
-    position: absolute;
-    top: 48%;
-    left: 52%;
-    width: 16px;
-    height: 16px;
-    background: var(--gold);
-    border: 3px solid var(--cream);
-    border-radius: 50%;
-    box-shadow: 0 0 0 6px rgba(154, 127, 61, 0.2);
-    animation: pinPulse 2s ease-in-out infinite;
-  }
-  @keyframes pinPulse {
-    0%, 100% { box-shadow: 0 0 0 6px rgba(154, 127, 61, 0.2); }
-    50% { box-shadow: 0 0 0 14px rgba(154, 127, 61, 0); }
-  }
-  .map-label {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    background: var(--cream);
-    padding: 14px 18px;
-    border-left: 2px solid var(--gold);
-  }
-  .map-label-l1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    color: var(--ink);
-    line-height: 1.2;
-  }
-  .map-label-l2 {
-    font-size: 13px;
-    color: var(--ink-mute);
-    margin-top: 4px;
+    overflow: hidden;
   }
 
   /* ───── FOOTER ───── */
@@ -1916,29 +1872,14 @@
 
       <div class="contact-map reveal">
         <div class="map-placeholder">
-          <!-- Decorative abstract street grid -->
-          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#9A7F3D" stroke-width="0.6" fill="none" opacity="0.45">
-              <path d="M0 80 L400 60"></path>
-              <path d="M0 160 L400 140"></path>
-              <path d="M0 240 L400 230"></path>
-              <path d="M0 320 L400 310"></path>
-              <path d="M80 0 L60 400"></path>
-              <path d="M180 0 L170 400"></path>
-              <path d="M280 0 L270 400"></path>
-              <path d="M340 0 L335 400"></path>
-            </g>
-            <g stroke="#4A5A45" stroke-width="0.4" fill="none" opacity="0.35">
-              <path d="M0 200 Q 100 180 200 210 T 400 200"></path>
-              <path d="M50 0 Q 120 100 100 200 T 80 400"></path>
-            </g>
-            <rect x="180" y="180" width="60" height="50" fill="#9A7F3D" opacity="0.18"></rect>
-          </svg>
-          <div class="map-pin"></div>
-          <div class="map-label">
-            <div class="map-label-l1">Shaarei Shamayim Gardens</div>
-            <div class="map-label-l2">Jacksonville Southside, FL</div>
-          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=4300+Beach+Blvd,+Jacksonville,+FL+32207&output=embed"
+            width="100%" height="100%"
+            style="border:0; display:block;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Shaarei Shamayim Gardens — 4300 Beach Blvd, Jacksonville, FL 32207">
+          </iframe>
         </div>
       </div>
     </div>
