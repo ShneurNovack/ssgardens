@@ -744,34 +744,11 @@
     overflow: hidden;
   }
 
-  /* Placeholder image — striped natural pattern */
-  .placeholder-img {
+  img.photo {
     width: 100%;
     height: 100%;
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(74, 90, 69, 0.18) 0px,
-        rgba(74, 90, 69, 0.18) 2px,
-        rgba(74, 90, 69, 0.10) 2px,
-        rgba(74, 90, 69, 0.10) 14px
-      ),
-      linear-gradient(180deg, #B8C0A8 0%, #8FA088 100%);
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 24px;
-    position: relative;
-  }
-  .placeholder-img::after {
-    content: attr(data-label);
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: rgba(31, 42, 35, 0.8);
-    background: rgba(241, 236, 224, 0.85);
-    padding: 6px 10px;
-    border-radius: 1px;
+    object-fit: cover;
+    display: block;
   }
 
   .hero-image-tag {
@@ -996,7 +973,7 @@
     transition: filter 0.4s ease;
   }
   .gallery-tile:hover { filter: brightness(0.95); }
-  .gallery-tile .placeholder-img { height: 100%; }
+  .gallery-tile img.photo { height: 100%; }
   .gallery-tile-meta {
     position: absolute;
     bottom: 24px;
@@ -1010,51 +987,6 @@
     font-weight: 500;
   }
 
-  /* Different placeholder tints */
-  .ph-grove .placeholder-img {
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(74, 90, 69, 0.18) 0px,
-        rgba(74, 90, 69, 0.18) 2px,
-        rgba(74, 90, 69, 0.10) 2px,
-        rgba(74, 90, 69, 0.10) 14px
-      ),
-      linear-gradient(180deg, #9CAA8E 0%, #6F7E68 100%);
-  }
-  .ph-gate .placeholder-img {
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(154, 127, 61, 0.20) 0px,
-        rgba(154, 127, 61, 0.20) 2px,
-        rgba(154, 127, 61, 0.10) 2px,
-        rgba(154, 127, 61, 0.10) 14px
-      ),
-      linear-gradient(180deg, #C9B98C 0%, #9A8852 100%);
-  }
-  .ph-path .placeholder-img {
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(31, 42, 35, 0.16) 0px,
-        rgba(31, 42, 35, 0.16) 2px,
-        rgba(31, 42, 35, 0.08) 2px,
-        rgba(31, 42, 35, 0.08) 14px
-      ),
-      linear-gradient(180deg, #A8AC9C 0%, #7D8474 100%);
-  }
-  .ph-stone .placeholder-img {
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(31, 42, 35, 0.12) 0px,
-        rgba(31, 42, 35, 0.12) 2px,
-        rgba(31, 42, 35, 0.06) 2px,
-        rgba(31, 42, 35, 0.06) 14px
-      ),
-      linear-gradient(180deg, #BFB8A4 0%, #908B78 100%);
-  }
 
   /* ───── PLAN TODAY ───── */
   .plan {
@@ -1660,7 +1592,7 @@
       </div>
 
       <div class="hero-image reveal">
-        <div class="placeholder-img" data-label="grounds_hero.jpg — long view across the gardens"></div>
+        <img class="photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1260&h=1575&auto=format&fit=crop&q=80" alt="Long view across the gardens">
         <div class="hero-image-tag">
           <div class="hero-image-tag-label">Established Tradition</div>
           <div class="hero-image-tag-text">"Upheld in accordance with the Chief Rabbinate of Israel."</div>
@@ -1766,15 +1698,15 @@
 <section class="gallery">
   <div class="gallery-row">
     <div class="gallery-tile ph-grove">
-      <div class="placeholder-img" data-label="grove.jpg — mature oak canopy"></div>
+      <img class="photo" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&auto=format&fit=crop&q=80" alt="Mature oak canopy">
       <div class="gallery-tile-meta">The Oak Grove</div>
     </div>
     <div class="gallery-tile ph-gate">
-      <div class="placeholder-img" data-label="gate.jpg — entry gate, golden hour"></div>
+      <img class="photo" src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=800&h=600&auto=format&fit=crop&q=80" alt="Entry gate at golden hour">
       <div class="gallery-tile-meta">The Entrance</div>
     </div>
     <div class="gallery-tile ph-path">
-      <div class="placeholder-img" data-label="path.jpg — walking path between sections"></div>
+      <img class="photo" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&auto=format&fit=crop&q=80" alt="Walking path between sections">
       <div class="gallery-tile-meta">Walking Path</div>
     </div>
   </div>
