@@ -546,11 +546,6 @@
     border-bottom-color: var(--line-soft);
   }
 
-  .hero-title-hebrew {
-    display: flex !important;
-    flex-direction: row-reverse;
-  }
-
   .nav-row {
     display: flex;
     align-items: center;
@@ -823,6 +818,12 @@
     margin-bottom: 24px;
     font-weight: 500;
   }
+  .section-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
@@ -1090,10 +1091,6 @@
     margin-bottom: 8px;
     line-height: 1;
   }
-  .plan-card-hebrew {
-    display: flex;
-    flex-direction: row-reverse;
-  }
   .plan-card-translit {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -1284,10 +1281,6 @@
     gap: 60px;
     margin-bottom: 60px;
   }
-  .footer-brand-hebrew {
-    display: flex !important;
-    flex-direction: row-reverse;
-  }
   .footer-brand {
     font-family: 'Cormorant Garamond', serif;
     color: var(--cream);
@@ -1358,111 +1351,42 @@
   }
   .modal {
     background: var(--cream);
-    max-width: 580px;
+    max-width: 680px;
     width: 100%;
-    padding: 56px 48px;
+    padding: 0;
     position: relative;
     transform: translateY(20px);
     transition: transform 0.3s ease;
     max-height: 92vh;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
   .modal-overlay.open .modal { transform: translateY(0); }
   .modal-close {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 36px;
-    height: 36px;
+    top: 10px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--ink-mute);
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1;
     transition: color 0.2s;
+    z-index: 2;
   }
   .modal-close:hover { color: var(--ink); }
-  .modal h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 10px;
-    color: var(--ink);
-  }
-  .modal-sub {
-    color: var(--ink-mute);
-    font-size: 15px;
-    margin-bottom: 32px;
-  }
-  .field {
-    margin-bottom: 20px;
-  }
-  .field label {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  .field input,
-  .field textarea,
-  .field select {
+  .modal-iframe {
     width: 100%;
-    padding: 12px 14px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    font-family: inherit;
-    font-size: 15px;
-    transition: border-color 0.2s, background 0.2s;
+    flex: 1;
+    min-height: 560px;
+    border: none;
+    display: block;
   }
-  .field input:focus,
-  .field textarea:focus,
-  .field select:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: var(--cream);
-  }
-  .field textarea {
-    resize: vertical;
-    min-height: 90px;
-  }
-  .field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .form-success {
-    text-align: center;
-    padding: 30px 10px;
-  }
-  .form-success-mark {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 22px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-size: 28px;
-  }
-  .form-success h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 400;
-    margin-bottom: 12px;
-    color: var(--ink);
-  }
-  .form-success p {
-    color: var(--ink-soft);
-    font-size: 16px;
-    line-height: 1.55;
+  @media (max-width: 980px) {
+    .modal-iframe { min-height: 480px; }
   }
 
   /* ───── Reveal animation ───── */
@@ -1506,6 +1430,14 @@
   <div class="container">
     <div class="nav-row">
       <a href="#top" class="brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- abstract gate motif -->
+          <path d="M6 34 V14 a14 14 0 0 1 28 0 V34" stroke="#1F2A23" stroke-width="1.2" fill="none"></path>
+          <path d="M20 34 V14" stroke="#9A7F3D" stroke-width="1"></path>
+          <path d="M11 34 V18" stroke="#1F2A23" stroke-width="0.8"></path>
+          <path d="M29 34 V18" stroke="#1F2A23" stroke-width="0.8"></path>
+          <circle cx="20" cy="14" r="2" stroke="#9A7F3D" stroke-width="1" fill="none"></circle>
+        </svg>
         <span class="brand-text">
           <span class="brand-name">Shaarei Shamayim</span>
           <span class="brand-sub">Gates of Heaven · Gardens</span>
@@ -1521,7 +1453,7 @@
         </ul>
       </nav>
       <button class="btn" data-open-modal="">
-        Contact
+        Request Information
         <span class="btn-arrow">→</span>
       </button>
     </div>
@@ -1534,11 +1466,13 @@
   <div class="container">
     <div class="hero-inner">
       <div class="reveal">
+        <div class="hero-eyebrow">A Sacred Resting Place · Jacksonville, Florida</div>
         <div class="hero-title-hebrew">שַׁעֲרֵי שָׁמַיִם</div>
         <h1 class="hero-title">Gates of <em>Heaven</em><br>Gardens</h1>
-        <div class="hero-translation">Peace of mind today. Dignity for generations</div>
+        <div class="hero-translation">— Peace of mind today. Dignity for generations. —</div>
         <p class="hero-lede">
-          A serene and beautiful final resting place for the Jacksonville Jewish community, held to the highest rabbinical standards, open to every Jewish family
+          A serene and beautiful final resting place for the Jacksonville Jewish community —
+          held to the highest rabbinical standards, open to every Jewish family
           regardless of affiliation.
         </p>
         <div class="hero-ctas">
@@ -1548,7 +1482,11 @@
       </div>
 
       <div class="hero-image reveal">
-        <img class="photo" src="https://github.com/ShneurNovack/ssgardens/blob/main/img/WhatsApp%20Image%202026-04-22%20at%202.04.59%20PM.jpeg?raw=true" alt="Long view across the gardens">
+        <img class="photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1260&h=1575&auto=format&fit=crop&q=80" alt="Long view across the gardens">
+        <div class="hero-image-tag">
+          <div class="hero-image-tag-label">Established Tradition</div>
+          <div class="hero-image-tag-text">"Upheld in accordance with the Chief Rabbinate of Israel."</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1565,13 +1503,14 @@
       <div class="reveal">
         <div class="section-eyebrow">Our Mission</div>
         <p class="mission-quote">
-          Every Jewish family deserves a sacred and respectful resting place rooted in tradition regardless of affiliation, regardless of membership.
+          Every Jewish family deserves a sacred and respectful resting place rooted in tradition —
+          regardless of affiliation, regardless of membership.
         </p>
       </div>
       <div class="mission-body reveal">
         <p>
           Shaarei Shamayim Gardens exists to serve the <strong>entire Jacksonville Jewish community.</strong>
-          We welcome every family seeking a dignified, traditional burial, without barriers of
+          We welcome every family seeking a dignified, traditional burial — without barriers of
           synagogue membership or denomination.
         </p>
         <p>
@@ -1602,33 +1541,39 @@
       </div>
       <div class="reveal">
         <p class="section-lede">
+          Four commitments shape every decision we make — from the care of our grounds
+          to the way we welcome every family who comes through our gates.
         </p>
       </div>
     </div>
 
     <div class="features-grid reveal">
       <div class="feature-card">
+        <span class="feature-num">— i —</span>
         <h3 class="feature-title">Tranquil, well-kept grounds</h3>
         <p class="feature-body">
-          Set on Jacksonville's Southside, our gardens are tended year-round, paths quiet,
-          trees mature, every stone respected.
+          Set on Jacksonville's Southside, our gardens are tended year-round — paths quiet,
+          trees mature, every stone respected. A place that feels like the visit you wanted to make.
         </p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">— ii —</span>
         <h3 class="feature-title">Family plots, side by side</h3>
         <p class="feature-body">
           Reserve adjacent plots so spouses, parents, and children may rest together.
-          The comfort of proximity is something families ask for, and something we make easy to arrange.
+          The comfort of proximity is something families ask for — and something we make easy to arrange.
         </p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">— iii —</span>
         <h3 class="feature-title">Honest, accessible pricing</h3>
         <p class="feature-body">
           A sacred resting place should be within reach of every Jewish family. Our pricing
-          is transparent, fair, and consistent, never inflated, never unclear.
+          is transparent, fair, and consistent — never inflated, never unclear.
         </p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">— iv —</span>
         <h3 class="feature-title">Zero-interest payment plans</h3>
         <p class="feature-body">
           Flexible installment options with <strong>no interest</strong>, ever. Plan today at today's rate,
@@ -1643,13 +1588,16 @@
 <section class="gallery">
   <div class="gallery-row">
     <div class="gallery-tile ph-grove">
-      <img class="photo" src="https://github.com/ShneurNovack/ssgardens/blob/main/img/WhatsApp%20Image%202026-04-22%20at%202.04.56%20PM.jpeg?raw=true">
+      <img class="photo" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&auto=format&fit=crop&q=80" alt="Mature oak canopy">
+      <div class="gallery-tile-meta">The Oak Grove</div>
     </div>
     <div class="gallery-tile ph-gate">
-      <img class="photo" src="https://github.com/ShneurNovack/ssgardens/blob/main/img/WhatsApp%20Image%202026-04-22%20at%202.04.57%20PM%20(1).jpeg?raw=true">
+      <img class="photo" src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=800&h=600&auto=format&fit=crop&q=80" alt="Entry gate at golden hour">
+      <div class="gallery-tile-meta">The Entrance</div>
     </div>
     <div class="gallery-tile ph-path">
-      <img class="photo" src="https://github.com/ShneurNovack/ssgardens/blob/main/img/WhatsApp%20Image%202026-04-22%20at%202.04.56%20PM%20(1).jpeg?raw=true" alt="Walking path between sections">
+      <img class="photo" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&auto=format&fit=crop&q=80" alt="Walking path between sections">
+      <div class="gallery-tile-meta">Walking Path</div>
     </div>
   </div>
 </section>
@@ -1671,7 +1619,7 @@
             <div class="plan-point-num">i.</div>
             <div class="plan-point-text">
               <strong>True peace of mind, today</strong>
-              The decision is made, the place is chosen, and you carry less of an unspoken weight.
+              The decision is made, the place is chosen — and you carry less of an unspoken weight.
             </div>
           </div>
           <div class="plan-point">
@@ -1696,10 +1644,11 @@
         <span class="plan-card-mark br"></span>
         <div class="plan-card-eyebrow">A Note from Tradition</div>
         <div class="plan-card-hebrew">סְגֻלָּה</div>
-        <div class="plan-card-translit">Segulah · A Spiritual Merit</div>
+        <div class="plan-card-translit">— Segulah · A Spiritual Merit —</div>
         <p class="plan-card-body">
-          The sages of the Midrash advise purchasing a burial plot even while one is still alive and well, and it is commonly said to be a
-          <em>segulah</em> — a spiritual merit for long life. By acting with foresight and dignity, we honor a wisdom passed down through generations.
+          In our tradition, to <em>arrange one's resting place in advance</em> is considered a
+          <em>segulah</em> — a spiritual merit for long life. By acting with foresight and dignity
+          for those who come after us, we honor a wisdom passed down through generations.
           <br><br>
           Planning is not an end. It is an expression of love.
         </p>
@@ -1722,7 +1671,7 @@
         <h3 class="actnow-item-title">Lock in today's pricing</h3>
         <p class="actnow-item-body">
           Rates are scheduled to increase in the coming months. Reserving today means
-          your cost is fixed, no surprises, no escalation.
+          your cost is fixed — no surprises, no escalation.
         </p>
       </div>
       <div class="actnow-item">
@@ -1730,14 +1679,14 @@
         <h3 class="actnow-item-title">Choose family proximity</h3>
         <p class="actnow-item-body">
           Reserving early gives you the freedom to select adjacent plots so loved ones
-          may rest side by side, a choice that grows scarcer with time.
+          may rest side by side — a choice that grows scarcer with time.
         </p>
       </div>
       <div class="actnow-item">
         <div class="actnow-item-num">03.</div>
         <h3 class="actnow-item-title">Decide on your own terms</h3>
         <p class="actnow-item-body">
-          Make this decision in peace and on your timeline, not under pressure,
+          Make this decision in peace and on your timeline — not under pressure,
           not in grief. A clarity that becomes a kindness to everyone who loves you.
         </p>
       </div>
@@ -1750,7 +1699,7 @@
   <div class="container-narrow">
     <div class="reveal" style="text-align: center;">
       <div class="section-eyebrow" style="justify-content: center;">Common Questions</div>
-      <h2 class="section-title" style="margin: 0 auto;">FAQs</em></h2>
+      <h2 class="section-title" style="margin: 0 auto;">Answers, gently <em>given.</em></h2>
     </div>
 
     <div class="faq-list reveal">
@@ -1760,7 +1709,8 @@
           <span class="faq-q-mark"></span>
         </button>
         <div class="faq-a">
-          <p>No. Shaarei Shamayim Gardens is here for the <em>entire</em> Jacksonville Jewish community regardless of affiliation, denomination, or synagogue membership. Every Jewish family is welcome.</p>
+          <p>No. Shaarei Shamayim Gardens is here for the <em>entire</em> Jacksonville Jewish community —
+          regardless of affiliation, denomination, or synagogue membership. Every Jewish family is welcome.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1800,8 +1750,8 @@
           <span class="faq-q-mark"></span>
         </button>
         <div class="faq-a">
-          <p>Absolutely! Use the contact us to schedule a private
-          visit at a time that suits you.</p>
+          <p>Absolutely — and we encourage it. Use the contact form below to schedule a private
+          visit at a time that suits you. There is no obligation; only the chance to see the gardens for yourself.</p>
         </div>
       </div>
     </div>
@@ -1816,7 +1766,7 @@
       <h2 class="section-title">Come walk the grounds. We'll <em>meet you there.</em></h2>
       <p class="section-lede">
         Reach out to schedule a private visit, ask a question, or request our pricing guide.
-        We respond personally, usually within one business day.
+        Rabbi Velvil and our team respond personally — usually within one business day.
       </p>
     </div>
 
@@ -1826,27 +1776,27 @@
           <div class="contact-info-label">Call</div>
           <div>
             <div class="contact-info-value">
-              <a href="tel:9046464434">904 · 646 · 4434</a>
+              <a href="tel:9042626641">904 · 262 · 6641</a>
             </div>
-            <span class="contact-info-sub">Sunday - Friday</span>
+            <span class="contact-info-sub">Mon – Thu · 9 am – 5 pm  ·  Fri · 9 am – 1 pm</span>
           </div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-label">Email</div>
           <div>
             <div class="contact-info-value">
-              <a href="mailto:office@chabadjax.com">office@chabadjax.com</a>
+              <a href="mailto:rabbivelvil@chabadjacksonville.org">rabbivelvil@chabadjacksonville.org</a>
             </div>
-            <span class="contact-info-sub">Email our office</span>
+            <span class="contact-info-sub">Rabbi Velvil · personal response within one business day</span>
           </div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-label">Visit</div>
           <div>
             <div class="contact-info-value">
-              Southside Jacksonville
+              Jacksonville's Southside,<br> Florida
             </div>
-            <span class="contact-info-sub">Private visits by appointment, please call ahead</span>
+            <span class="contact-info-sub">Private visits by appointment — please call ahead</span>
           </div>
         </div>
         <div style="padding-top: 32px;">
@@ -1878,7 +1828,8 @@
         <div class="footer-brand-hebrew">שַׁעֲרֵי שָׁמַיִם</div>
         <div class="footer-brand">Shaarei Shamayim Gardens</div>
         <p class="footer-tag">
-          A serene and beautiful final resting place for the Jacksonville Jewish community, held to the highest rabbinical standards, open to every Jewish family.
+          A serene and beautiful final resting place for the Jacksonville Jewish community —
+          held to the highest rabbinical standards, open to every Jewish family.
         </p>
       </div>
       <div class="footer-col">
@@ -1893,15 +1844,15 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:9042626641">904 · 646 · 4434</a></li>
-          <li><a href="mailto:office@chabadjax.com">Email Us</a></li>
+          <li><a href="tel:9042626641">904 · 262 · 6641</a></li>
+          <li><a href="mailto:rabbivelvil@chabadjacksonville.org">Email Rabbi Velvil</a></li>
           <li><a href="#contact">Schedule a Visit</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bot">
-      <span>Shaarei Shamayim Gardens · Jacksonville, FL</span>
-      <span></span>
+      <span>© 2026 Shaarei Shamayim Gardens · Jacksonville, FL</span>
+      <span>זִכְרוֹנָם לִבְרָכָה</span>
     </div>
   </div>
 </footer>
@@ -1910,59 +1861,12 @@
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal">
     <button class="modal-close" aria-label="Close" data-close-modal="">✕</button>
-    <div id="modal-form-body">
-      <h3>Request Information</h3>
-      <p class="modal-sub">
-        Share a few details and we'll be in touch personally — usually within one business day.
-      </p>
-      <form id="contact-form" novalidate="">
-        <div class="field-row">
-          <div class="field">
-            <label for="first">First name</label>
-            <input id="first" name="first" type="text" required="">
-          </div>
-          <div class="field">
-            <label for="last">Last name</label>
-            <input id="last" name="last" type="text" required="">
-          </div>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required="">
-        </div>
-        <div class="field">
-          <label for="phone">Phone (optional)</label>
-          <input id="phone" name="phone" type="tel">
-        </div>
-        <div class="field">
-          <label for="interest">I'm interested in</label>
-          <select id="interest" name="interest">
-            <option>Scheduling a private visit</option>
-            <option>Receiving the pricing guide</option>
-            <option>Reserving a family plot</option>
-            <option>General information</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="note">Anything you'd like us to know (optional)</label>
-          <textarea id="note" name="note" placeholder="A question, a family circumstance, a preferred time to be reached…"></textarea>
-        </div>
-        <button type="submit" class="btn" style="width: 100%; justify-content: center;">
-          Send Request<span class="btn-arrow">→</span>
-        </button>
-      </form>
-    </div>
-    <div id="modal-success-body" style="display:none;">
-      <div class="form-success">
-        <div class="form-success-mark">✓</div>
-        <h4>Thank you.</h4>
-        <p>
-          Your request has reached us. Rabbi Velvil or a member of our team will be in touch
-          personally — usually within one business day.<br><br>
-          <em>בְּשׁוּרוֹת טוֹבוֹת.</em>
-        </p>
-      </div>
-    </div>
+    <iframe
+      class="modal-iframe"
+      src="https://www.southsidechabad.com/templates/articlecco_cdo/aid/7367540/jewish/Shaarei-Shamayim-Contact.htm/embed/true"
+      title="Shaarei Shamayim Contact Form"
+      loading="lazy">
+    </iframe>
   </div>
 </div>
 
@@ -2018,15 +1922,10 @@
 
   // Modal
   const modal = document.getElementById('modal');
-  const formBody = document.getElementById('modal-form-body');
-  const successBody = document.getElementById('modal-success-body');
   const openModal = () => {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // reset to form view
-    formBody.style.display = '';
-    successBody.style.display = 'none';
   };
   const closeModal = () => {
     modal.classList.remove('open');
@@ -2037,29 +1936,6 @@
   document.querySelectorAll('[data-close-modal]').forEach((b) => b.addEventListener('click', closeModal));
   modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-  // Form
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // simple validation
-    const first = form.first.value.trim();
-    const last = form.last.value.trim();
-    const email = form.email.value.trim();
-    let ok = true;
-    [['first', first], ['last', last], ['email', email]].forEach(([k, v]) => {
-      const f = form[k];
-      f.style.borderColor = v ? '' : '#B85436';
-      if (!v) ok = false;
-    });
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      form.email.style.borderColor = '#B85436';
-      ok = false;
-    }
-    if (!ok) return;
-    formBody.style.display = 'none';
-    successBody.style.display = '';
-  });
 </script>
 
 
